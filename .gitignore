@@ -22,6 +22,7 @@ npm-debug.log*
 e2e/
 coverage/
 dist/
+ios/
 node_modules/
 tmp/
 temp/
