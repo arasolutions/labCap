@@ -1,7 +1,7 @@
 {
   "name": "labCap",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular",
   "id": "fc40254a"
