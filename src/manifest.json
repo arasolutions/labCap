@@ -1,6 +1,6 @@
 {
-  "name": "Lab Cap",
-  "short_name": "Lab Cap",
+  "name": "labCap",
+  "short_name": "labCap",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [
