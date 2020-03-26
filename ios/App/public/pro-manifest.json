@@ -836,13 +836,13 @@
   },
   {
     "href": "main-es2015.js",
-    "size": 60312,
-    "integrity": "sha256-TGaAnzQccFenseemjuBjo+j3oCf+jLj/4bPjeXjCJqE= sha384-XJGcDn9NFJlY4alibCEUUFg15xNwSb6RdBkuR/E65i4qlFrCcYkPX+O2G2c7azdm sha512-lT4V7m6HmzQoARf+mNDJvtn32vXQ/osYDvCipSuH2ju/aIeKCGG2RqzSAr1nU1l0NeyNvJ3mM2IEYX+QOVZ2+Q=="
+    "size": 60279,
+    "integrity": "sha256-kjyey1BfhXXGpT1wd53VNGaBHUQBJDooS424JsmZJ9s= sha384-zBrekEPDFM31hz6jHy/lVP3jNhF0t54gys7k/wnCn8c3/VuOQiHafA6DMzT12mcC sha512-gIOo7EBigq8WiRdO6BKUIWG+RwurNM8W/PmneJwd/2NzR7I5/F2VpCvCtZ+dz7g0eNOmsT90461AS5BfYm/JFQ=="
   },
   {
     "href": "main-es5.js",
-    "size": 68066,
-    "integrity": "sha256-2J6KjdlpfQ0ZT0Dbwnw2MEQohyxi8ykglIzcOzkgNTM= sha384-yHT8qEy7mzBqD+9V1kTDOWi2j/YtN2ihFSsm2md7kyH3K80dd9zWMI9NpO+sDd+q sha512-HtQo0J2y58/le7L6PheQp2ubsBCnJND5Cv7M3zfT96mUAIgDgcQCcamgV3SJ6kyBJ9z+SRyi38mheCbXd0EV+g=="
+    "size": 68033,
+    "integrity": "sha256-CpUjJJvBjVRNet5dZm/siimE+Uai+IiUGLU4UkPolZw= sha384-sgK/dNyUu3+KVo59oqVW5gTmGT+aaupa6Kb27a2lXP4BQ/cus8ugFY4wY7xq0IX4 sha512-j0OYkARtToHdQiMifeSMnkF5H9aHUZOXyYC2v2MipdAzyoms+5CL/FiQpjsBi0TXMADMV4lunuqY6P00TqdVFg=="
   },
   {
     "href": "md-transition-5ee3c425-js-es2015.js",
@@ -906,13 +906,13 @@
   },
   {
     "href": "pages-tutorial-tutorial-module-es2015.js",
-    "size": 13026,
-    "integrity": "sha256-sbQu98+3NHPhHs9sRsQ91goHD8AjlajjiU2UWt2VHsc= sha384-2e7WeEEFCLa+fyJk2kzWubfeQ/u3eH9x91s3J+tJ7Vbl/NS6BlDDNgTKUk0JVF+F sha512-FifzQC8g+vcDdyHNH+ypmQGILM2Ae1+vV8HIF0v9c9kFtFfSieAxe6al2Bf2Npv2gs8mHgElFv3TbMkr0g1FiQ=="
+    "size": 13028,
+    "integrity": "sha256-N38lQHxi/F9WOwum5m8J2zGdeoGYkIy6F9R33MUt2lM= sha384-nRLrJLT7TK21AS2VFd7hB3W3Yz0NVihBWRw+yktvO2zoZlUv9OSZb+zK8sEMSuK0 sha512-IJqRVEcHTD0cayeWowbvA8B++Dy47aKVHkuNGlMtPXMXpGuirWOPU2zJv3ckW0FwV/KMSCWnJtaWodOUOJZB6Q=="
   },
   {
     "href": "pages-tutorial-tutorial-module-es5.js",
-    "size": 15137,
-    "integrity": "sha256-ew6bTiT4+CWebBStTqok8jswUIFYTn4A8TcTjS51byM= sha384-8+lVRHNhoWcE4aJ2+a2n43PkMGpB5jJSuS9GT1Y/+dDOLuZlOG9pZXRfDCwvFFdc sha512-xHjjsqfHpI0hph2dSXYP3YycOGkKJJAmUstU3hbAN0NtswC7I4FVjiDLi5pxIBb+qBTJAW7nBbzq13v+Zdx3RQ=="
+    "size": 15139,
+    "integrity": "sha256-7dfbUNKWBf9DSYmrk8D81KA8/+2gbN3NF1n7dmrMIwo= sha384-YgnNldrclh/leQud3LeXiGiWqoYc2tBaHm5XqZHkbuPYAx1tVWL3j1Z+6z0GKKxW sha512-nYkwJ2Jw1qhDam3lbpolhPc+Ro7wQSfwsNBEhum5TLo9GUl6+j338spJKN6pR++BGdvPGPq4Pdus8r3XUFsrCQ=="
   },
   {
     "href": "polyfills-es2015.js",

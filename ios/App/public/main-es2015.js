@@ -828,7 +828,6 @@ let AppComponent = class AppComponent {
         ];
         this.loggedIn = false;
         this.dark = false;
-        console.log('ctr=====');
         this.initializeApp();
     }
     ngOnInit() {

@@ -1018,7 +1018,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }];
         this.loggedIn = false;
         this.dark = false;
-        console.log('ctr=====');
         this.initializeApp();
       }
 
