@@ -4,7 +4,7 @@
 
 App/build
 App/Pods
-App/public
+#App/public comment pour voir si le deploy va plus vite
 App/Podfile.lock
 xcuserdata
 

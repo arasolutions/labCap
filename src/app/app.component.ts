@@ -4,8 +4,8 @@ import { SwUpdate } from '@angular/service-worker';
 
 import { MenuController, Platform, ToastController } from '@ionic/angular';
 
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Plugins } from '@capacitor/core';
 
 import { Storage } from '@ionic/storage';
 
@@ -18,6 +18,7 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  
   appPages = [
     {
       title: 'Schedule',
@@ -47,46 +48,58 @@ export class AppComponent implements OnInit {
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
-    private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private storage: Storage,
     private userData: UserData,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
   ) {
+    console.log('ctr=====');
     this.initializeApp();
   }
 
   async ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
+    // this.checkLoginStatus();
+    // this.listenForLoginEvents();
 
-    this.swUpdate.available.subscribe(async res => {
-      const toast = await this.toastCtrl.create({
-        message: 'Update available!',
-        position: 'bottom',
-        buttons: [
-          {
-            role: 'cancel',
-            text: 'Reload'
-          }
-        ]
-      });
+    // this.swUpdate.available.subscribe(async res => {
+    //   const toast = await this.toastCtrl.create({
+    //     message: 'Update available!',
+    //     position: 'bottom',
+    //     buttons: [
+    //       {
+    //         role: 'cancel',
+    //         text: 'Reload'
+    //       }
+    //     ]
+    //   });
 
-      await toast.present();
+    //   await toast.present();
 
-      toast
-        .onDidDismiss()
-        .then(() => this.swUpdate.activateUpdate())
-        .then(() => window.location.reload());
-    });
+    //   toast
+    //     .onDidDismiss()
+    //     .then(() => this.swUpdate.activateUpdate())
+    //     .then(() => window.location.reload());
+    // });
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+  // initializeApp() {
+  //   console.log('initializeApp');
+  //   this.platform.ready().then(() => {
+  //     this.statusBar.styleDefault();
+  //     console.log('1');
+  //     await SplashScreen.hide();
+  //     console.log('2');
+  //   });
+  // }
+
+  async initializeApp() {
+    const { SplashScreen, StatusBar } = Plugins;
+    //if (this.platform.is('hybrid')) {
+      await SplashScreen.hide();
+      //await StatusBar.setStyle({ style: StatusBarStyle.Light });
+    //}
+    this.openTutorial();
   }
 
   checkLoginStatus() {
