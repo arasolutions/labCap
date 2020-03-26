@@ -54,7 +54,6 @@ export class AppComponent implements OnInit {
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
   ) {
-    console.log('ctr=====');
     this.initializeApp();
   }
 

@@ -7,7 +7,7 @@
   "plugins": {
     "SplashScreen": {
       "launchShowDuration": 5002,
-      "launchAutoHide": true
+      "launchAutoHide": false
     }
   }
 }
