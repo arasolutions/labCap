@@ -222,9 +222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../../providers/user-data */
     "./src/app/providers/user-data.ts");
 
-    var SignupPage =
-    /*#__PURE__*/
-    function () {
+    var SignupPage = /*#__PURE__*/function () {
       function SignupPage(router, userData) {
         _classCallCheck(this, SignupPage);
 
@@ -264,10 +262,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selector: 'page-signup',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./signup.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/signup/signup.html")).default,
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/signup/signup.html"))["default"],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./signup.scss */
-      "./src/app/pages/signup/signup.scss")).default]
+      "./src/app/pages/signup/signup.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _providers_user_data__WEBPACK_IMPORTED_MODULE_3__["UserData"]])], SignupPage);
     /***/
   }

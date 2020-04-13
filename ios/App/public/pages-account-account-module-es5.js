@@ -222,9 +222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../../providers/user-data */
     "./src/app/providers/user-data.ts");
 
-    var AccountPage =
-    /*#__PURE__*/
-    function () {
+    var AccountPage = /*#__PURE__*/function () {
       function AccountPage(alertCtrl, router, userData) {
         _classCallCheck(this, AccountPage);
 
@@ -249,9 +247,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "changeUsername",
         value: function changeUsername() {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
-          /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
             var _this = this;
 
             var alert;
@@ -335,10 +331,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selector: 'page-account',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./account.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/account/account.html")).default,
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/account/account.html"))["default"],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./account.scss */
-      "./src/app/pages/account/account.scss")).default]
+      "./src/app/pages/account/account.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_3__["AlertController"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _providers_user_data__WEBPACK_IMPORTED_MODULE_4__["UserData"]])], AccountPage);
     /***/
   }

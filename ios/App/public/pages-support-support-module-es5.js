@@ -216,9 +216,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! @ionic/angular */
     "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
 
-    var SupportPage =
-    /*#__PURE__*/
-    function () {
+    var SupportPage = /*#__PURE__*/function () {
       function SupportPage(alertCtrl, toastCtrl) {
         _classCallCheck(this, SupportPage);
 
@@ -230,9 +228,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(SupportPage, [{
         key: "ionViewDidEnter",
         value: function ionViewDidEnter() {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
-          /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
             var toast;
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
@@ -260,9 +256,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "submit",
         value: function submit(form) {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0,
-          /*#__PURE__*/
-          regeneratorRuntime.mark(function _callee2() {
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
             var toast;
             return regeneratorRuntime.wrap(function _callee2$(_context2) {
               while (1) {
@@ -313,10 +307,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selector: 'page-support',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./support.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/support/support.html")).default,
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/support/support.html"))["default"],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./support.scss */
-      "./src/app/pages/support/support.scss")).default]
+      "./src/app/pages/support/support.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["ToastController"]])], SupportPage);
     /***/
   }

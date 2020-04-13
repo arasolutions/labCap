@@ -222,9 +222,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /*! ../../providers/user-data */
     "./src/app/providers/user-data.ts");
 
-    var LoginPage =
-    /*#__PURE__*/
-    function () {
+    var LoginPage = /*#__PURE__*/function () {
       function LoginPage(userData, router) {
         _classCallCheck(this, LoginPage);
 
@@ -269,10 +267,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       selector: 'page-login',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! raw-loader!./login.html */
-      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/login/login.html")).default,
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/login/login.html"))["default"],
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./login.scss */
-      "./src/app/pages/login/login.scss")).default]
+      "./src/app/pages/login/login.scss"))["default"]]
     }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_providers_user_data__WEBPACK_IMPORTED_MODULE_3__["UserData"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])], LoginPage);
     /***/
   }
