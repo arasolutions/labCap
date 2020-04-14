@@ -4,8 +4,7 @@ import { SwUpdate } from '@angular/service-worker';
 
 import { MenuController, Platform, ToastController } from '@ionic/angular';
 
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Plugins } from '@capacitor/core';
+import { Plugins, StatusBarStyle } from '@capacitor/core';
 
 import { Storage } from '@ionic/storage';
 
@@ -48,7 +47,6 @@ export class AppComponent implements OnInit {
     private menu: MenuController,
     private platform: Platform,
     private router: Router,
-    private statusBar: StatusBar,
     private storage: Storage,
     private userData: UserData,
     private swUpdate: SwUpdate,
@@ -96,7 +94,7 @@ export class AppComponent implements OnInit {
     const { SplashScreen, StatusBar } = Plugins;
     //if (this.platform.is('hybrid')) {
       await SplashScreen.hide();
-      //await StatusBar.setStyle({ style: StatusBarStyle.Light });
+      await StatusBar.setStyle({ style: StatusBarStyle.Light });
     //}
     this.openTutorial();
   }

@@ -781,11 +781,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
 /* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
-/* harmony import */ var _providers_user_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./providers/user-data */ "./src/app/providers/user-data.ts");
-
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _providers_user_data__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./providers/user-data */ "./src/app/providers/user-data.ts");
 
 
 
@@ -795,11 +793,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AppComponent = class AppComponent {
-    constructor(menu, platform, router, statusBar, storage, userData, swUpdate, toastCtrl) {
+    constructor(menu, platform, router, storage, userData, swUpdate, toastCtrl) {
         this.menu = menu;
         this.platform = platform;
         this.router = router;
-        this.statusBar = statusBar;
         this.storage = storage;
         this.userData = userData;
         this.swUpdate = swUpdate;
@@ -864,10 +861,10 @@ let AppComponent = class AppComponent {
     // }
     initializeApp() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const { SplashScreen, StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_6__["Plugins"];
+            const { SplashScreen, StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"];
             //if (this.platform.is('hybrid')) {
             yield SplashScreen.hide();
-            //await StatusBar.setStyle({ style: StatusBarStyle.Light });
+            yield StatusBar.setStyle({ style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light });
             //}
             this.openTutorial();
         });
@@ -908,9 +905,8 @@ AppComponent.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["MenuController"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
-    { type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"] },
-    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"] },
-    { type: _providers_user_data__WEBPACK_IMPORTED_MODULE_8__["UserData"] },
+    { type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"] },
+    { type: _providers_user_data__WEBPACK_IMPORTED_MODULE_7__["UserData"] },
     { type: _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["SwUpdate"] },
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"] }
 ];
@@ -924,9 +920,8 @@ AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["MenuController"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"],
         _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-        _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"],
-        _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"],
-        _providers_user_data__WEBPACK_IMPORTED_MODULE_8__["UserData"],
+        _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"],
+        _providers_user_data__WEBPACK_IMPORTED_MODULE_7__["UserData"],
         _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["SwUpdate"],
         _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]])
 ], AppComponent);

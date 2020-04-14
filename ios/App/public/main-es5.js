@@ -963,36 +963,29 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony import */
 
 
-    var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
-    /*! @ionic-native/status-bar/ngx */
-    "./node_modules/@ionic-native/status-bar/ngx/index.js");
-    /* harmony import */
-
-
-    var _capacitor_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _capacitor_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! @capacitor/core */
     "./node_modules/@capacitor/core/dist/esm/index.js");
     /* harmony import */
 
 
-    var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! @ionic/storage */
     "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
     /* harmony import */
 
 
-    var _providers_user_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    var _providers_user_data__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ./providers/user-data */
     "./src/app/providers/user-data.ts");
 
     var AppComponent = /*#__PURE__*/function () {
-      function AppComponent(menu, platform, router, statusBar, storage, userData, swUpdate, toastCtrl) {
+      function AppComponent(menu, platform, router, storage, userData, swUpdate, toastCtrl) {
         _classCallCheck(this, AppComponent);
 
         this.menu = menu;
         this.platform = platform;
         this.router = router;
-        this.statusBar = statusBar;
         this.storage = storage;
         this.userData = userData;
         this.swUpdate = swUpdate;
@@ -1053,17 +1046,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
               while (1) {
                 switch (_context2.prev = _context2.next) {
                   case 0:
-                    _capacitor_core__WEBP = _capacitor_core__WEBPACK_IMPORTED_MODULE_6__["Plugins"], SplashScreen = _capacitor_core__WEBP.SplashScreen, StatusBar = _capacitor_core__WEBP.StatusBar; //if (this.platform.is('hybrid')) {
+                    _capacitor_core__WEBP = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"], SplashScreen = _capacitor_core__WEBP.SplashScreen, StatusBar = _capacitor_core__WEBP.StatusBar; //if (this.platform.is('hybrid')) {
 
                     _context2.next = 3;
                     return SplashScreen.hide();
 
                   case 3:
-                    //await StatusBar.setStyle({ style: StatusBarStyle.Light });
+                    _context2.next = 5;
+                    return StatusBar.setStyle({
+                      style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light
+                    });
+
+                  case 5:
                     //}
                     this.openTutorial();
 
-                  case 4:
+                  case 6:
                   case "end":
                     return _context2.stop();
                 }
@@ -1133,11 +1131,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
       }, {
-        type: _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"]
+        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"]
       }, {
-        type: _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"]
-      }, {
-        type: _providers_user_data__WEBPACK_IMPORTED_MODULE_8__["UserData"]
+        type: _providers_user_data__WEBPACK_IMPORTED_MODULE_7__["UserData"]
       }, {
         type: _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["SwUpdate"]
       }, {
@@ -1154,7 +1150,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./app.component.scss */
       "./src/app/app.component.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"], _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["Storage"], _providers_user_data__WEBPACK_IMPORTED_MODULE_8__["UserData"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["SwUpdate"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]])], AppComponent);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_ionic_angular__WEBPACK_IMPORTED_MODULE_4__["MenuController"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["Platform"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["Storage"], _providers_user_data__WEBPACK_IMPORTED_MODULE_7__["UserData"], _angular_service_worker__WEBPACK_IMPORTED_MODULE_3__["SwUpdate"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["ToastController"]])], AppComponent);
     /***/
   },
 
