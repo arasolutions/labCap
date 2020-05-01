@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Camera Test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-button (click)=\"takePicture()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n    Take picture\n  </ion-button>\n  {{image}}\n  <img [src]=\"image\"/>\n</ion-content>";
+    __webpack_exports__["default"] = "<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Camera Test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-button (click)=\"takePicture()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n    Take picture\n  </ion-button>\n  \n  <img [src]=\"image\"/>\n</ion-content>";
     /***/
   },
 
@@ -215,12 +215,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @capacitor/core */
     "./node_modules/@capacitor/core/dist/esm/index.js");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 
     var CamPage = /*#__PURE__*/function () {
-      function CamPage() {
+      function CamPage(sanitizer) {
         _classCallCheck(this, CamPage);
 
-        this.image = '';
+        this.sanitizer = sanitizer;
       }
 
       _createClass(CamPage, [{
@@ -230,30 +236,23 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "takePicture",
         value: function takePicture() {
           return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-            var Camera, image, imageUrl;
+            var image;
             return regeneratorRuntime.wrap(function _callee$(_context) {
               while (1) {
                 switch (_context.prev = _context.next) {
                   case 0:
-                    Camera = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"].Camera;
-                    _context.next = 3;
-                    return Camera.getPhoto({
-                      quality: 90,
+                    _context.next = 2;
+                    return _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"].Camera.getPhoto({
+                      quality: 100,
                       allowEditing: true,
-                      resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraResultType"].Uri
+                      resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraResultType"].DataUrl
                     });
 
-                  case 3:
+                  case 2:
                     image = _context.sent;
-                    // image.webPath will contain a path that can be set as an image src. 
-                    // You can access the original file using image.path, which can be 
-                    // passed to the Filesystem API to read the raw data of the image, 
-                    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-                    imageUrl = image.webPath; // Can be set to the src of an image now
+                    this.image = this.sanitizer.bypassSecurityTrustResourceUrl(image && image.dataUrl);
 
-                    this.image = imageUrl;
-
-                  case 6:
+                  case 4:
                   case "end":
                     return _context.stop();
                 }
@@ -266,6 +265,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       return CamPage;
     }();
 
+    CamPage.ctorParameters = function () {
+      return [{
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]
+      }];
+    };
+
     CamPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-cam',
       template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
@@ -274,7 +279,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
       /*! ./cam.page.scss */
       "./src/app/pages/pluginsTest/cam/cam.page.scss"))["default"]]
-    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])], CamPage);
+    }), tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]])], CamPage);
     /***/
   }
 }]);

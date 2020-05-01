@@ -9,7 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Camera Test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-button (click)=\"takePicture()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n    Take picture\n  </ion-button>\n  {{image}}\n  <img [src]=\"image\"/>\n</ion-content>");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header>\n  <ion-toolbar>\n    <ion-buttons slot=\"start\">\n      <ion-menu-button></ion-menu-button>\n    </ion-buttons>\n    <ion-title>Camera Test</ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content>\n  <ion-button (click)=\"takePicture()\" expand=\"block\" fill=\"clear\" shape=\"round\">\n    Take picture\n  </ion-button>\n  \n  <img [src]=\"image\"/>\n</ion-content>");
 
 /***/ }),
 
@@ -118,40 +118,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
+
 
 
 
 let CamPage = class CamPage {
-    constructor() {
-        this.image = '';
+    constructor(sanitizer) {
+        this.sanitizer = sanitizer;
     }
     ngOnInit() {
     }
     takePicture() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const { Camera } = _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"];
-            const image = yield Camera.getPhoto({
-                quality: 90,
+            const image = yield _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["Plugins"].Camera.getPhoto({
+                quality: 100,
                 allowEditing: true,
-                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraResultType"].Uri
+                resultType: _capacitor_core__WEBPACK_IMPORTED_MODULE_2__["CameraResultType"].DataUrl
             });
-            // image.webPath will contain a path that can be set as an image src. 
-            // You can access the original file using image.path, which can be 
-            // passed to the Filesystem API to read the raw data of the image, 
-            // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-            var imageUrl = image.webPath;
-            // Can be set to the src of an image now
-            this.image = imageUrl;
+            this.image = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
         });
     }
 };
+CamPage.ctorParameters = () => [
+    { type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"] }
+];
 CamPage = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-cam',
         template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./cam.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/pluginsTest/cam/cam.page.html")).default,
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./cam.page.scss */ "./src/app/pages/pluginsTest/cam/cam.page.scss")).default]
     }),
-    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["DomSanitizer"]])
 ], CamPage);
 
 

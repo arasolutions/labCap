@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Plugins, CameraResultType } from '@capacitor/core';
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cam',
@@ -8,26 +9,20 @@ import { Plugins, CameraResultType } from '@capacitor/core';
 })
 export class CamPage implements OnInit {
 
-  image : String = '';
+  image: SafeResourceUrl;
 
-  constructor() {}
+  constructor(private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
   }
 
   async takePicture() {
-    const { Camera } = Plugins;
-    const image = await Camera.getPhoto({
-      quality: 90,
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
       allowEditing: true,
-      resultType: CameraResultType.Uri
+      resultType: CameraResultType.DataUrl
     });
-    // image.webPath will contain a path that can be set as an image src. 
-    // You can access the original file using image.path, which can be 
-    // passed to the Filesystem API to read the raw data of the image, 
-    // if desired (or pass resultType: CameraResultType.Base64 to getPhoto)
-    var imageUrl = image.webPath;
-    // Can be set to the src of an image now
-    this.image = imageUrl;
+
+    this.image = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
 }
