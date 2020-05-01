@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Api Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="getExampleData()" expand="block" fill="clear" shape="round">
+    getExampleData
+  </ion-button>
+  <ion-button (click)="getExampleDataToProm()" expand="full" fill="clear" shape="round">
+    getExampleDataToProm
+  </ion-button>
+  <ion-button (click)="getBouchonData()" color="secondary" expand="full" fill="clear" shape="round">
+    getBouchonData
+  </ion-button>
+  <ion-button (click)="data=''" color="danger" expand="full">
+    Reset
+  </ion-button>
+  
+  <ion-item>
+    <ion-textarea [(ngModel)]="data" placeholder="En attente de data..."></ion-textarea>
+  </ion-item>
+</ion-content>

@@ -32,6 +32,10 @@ const routes: Routes = [
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
+  },
+  {
+    path: 'api-test',
+    loadChildren: () => import('./pages/api-test/api-test.module').then( m => m.ApiTestPageModule)
   }
 ];
 

@@ -3,6 +3,37 @@
 
     <ion-menu contentId="main-content">
       <ion-content>
+
+        <ion-list lines="none">
+          <ion-list-header>
+            Plugins
+          </ion-list-header>
+    
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/cam" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="camera"></ion-icon>
+              <ion-label>
+                Camera
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+    
+        <ion-list lines="none">
+          <ion-list-header>
+            Misc
+          </ion-list-header>
+    
+          <ion-menu-toggle autoHide="false">
+            <ion-item routerLink="/api-test" routerLinkActive="active" routerDirection="root" detail="false">
+              <ion-icon slot="start" name="repeat"></ion-icon>
+              <ion-label>
+                Api Test
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
         <ion-list lines="none">
           <ion-list-header>
             Conference
