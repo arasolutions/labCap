@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Camera Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="takePicture()" expand="block" fill="clear" shape="round">
+    Take picture
+  </ion-button>
+  {{image}}
+  <img [src]="image"/>
+</ion-content>

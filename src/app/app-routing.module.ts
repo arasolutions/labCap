@@ -36,6 +36,10 @@ const routes: Routes = [
   {
     path: 'api-test',
     loadChildren: () => import('./pages/api-test/api-test.module').then( m => m.ApiTestPageModule)
+  },
+  {
+    path: 'cam',
+    loadChildren: () => import('./pages/pluginsTest/cam/cam.module').then( m => m.CamPageModule)
   }
 ];
 
