@@ -17,7 +17,7 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  
+
   appPages = [
     {
       title: 'Schedule',
@@ -91,15 +91,13 @@ export class AppComponent implements OnInit {
   // }
 
   async initializeApp() {
-    const { SplashScreen, StatusBar } = Plugins;
-    //if (this.platform.is('hybrid')) {
-      await SplashScreen.hide();
-      if (this.platform.is("capacitor")){
+    const { StatusBar } = Plugins;
+    this.platform.ready().then(async () => {
+      if (this.platform.is("capacitor")) {
         await StatusBar.setStyle({ style: StatusBarStyle.Light });
       }
-    //}
-    //this.openTutorial();
-    this.router.navigateByUrl('/app/tabs/schedule');
+      this.router.navigateByUrl('/app/tabs/schedule');
+    });
   }
 
   checkLoginStatus() {

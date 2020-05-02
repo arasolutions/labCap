@@ -918,6 +918,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _schedule_filter_schedule_filter__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../schedule-filter/schedule-filter */ "./src/app/pages/schedule-filter/schedule-filter.ts");
 /* harmony import */ var _providers_conference_data__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../providers/conference-data */ "./src/app/providers/conference-data.ts");
 /* harmony import */ var _providers_user_data__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../providers/user-data */ "./src/app/providers/user-data.ts");
+/* harmony import */ var _capacitor_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @capacitor/core */ "./node_modules/@capacitor/core/dist/esm/index.js");
+
 
 
 
@@ -944,8 +946,15 @@ let SchedulePage = class SchedulePage {
         this.groups = [];
     }
     ngOnInit() {
+        this.hideScreenSplash();
         this.updateSchedule();
         this.ios = this.config.get('mode') === 'ios';
+    }
+    hideScreenSplash() {
+        return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+            const { SplashScreen } = _capacitor_core__WEBPACK_IMPORTED_MODULE_7__["Plugins"];
+            yield SplashScreen.hide();
+        });
     }
     updateSchedule() {
         // Close any open sliding items when the schedule updates

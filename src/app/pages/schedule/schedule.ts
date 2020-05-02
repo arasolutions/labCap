@@ -5,6 +5,7 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 import { ScheduleFilterPage } from '../schedule-filter/schedule-filter';
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
+import { Plugins } from '@capacitor/core';
 
 @Component({
   selector: 'page-schedule',
@@ -38,9 +39,15 @@ export class SchedulePage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.hideScreenSplash();
     this.updateSchedule();
 
     this.ios = this.config.get('mode') === 'ios';
+  }
+
+  async hideScreenSplash(){
+    const { SplashScreen } = Plugins;
+    await SplashScreen.hide();
   }
 
   updateSchedule() {

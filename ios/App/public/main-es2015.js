@@ -867,15 +867,13 @@ let AppComponent = class AppComponent {
     // }
     initializeApp() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            const { SplashScreen, StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"];
-            //if (this.platform.is('hybrid')) {
-            yield SplashScreen.hide();
-            if (this.platform.is("capacitor")) {
-                yield StatusBar.setStyle({ style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light });
-            }
-            //}
-            //this.openTutorial();
-            this.router.navigateByUrl('/app/tabs/schedule');
+            const { StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"];
+            this.platform.ready().then(() => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
+                if (this.platform.is("capacitor")) {
+                    yield StatusBar.setStyle({ style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light });
+                }
+                this.router.navigateByUrl('/app/tabs/schedule');
+            }));
         });
     }
     checkLoginStatus() {

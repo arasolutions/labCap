@@ -1061,82 +1061,91 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "initializeApp",
         value: function initializeApp() {
-          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-            var _capacitor_core__WEBP, SplashScreen, StatusBar;
+          return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+            var _this = this;
 
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
+            var StatusBar;
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
-                switch (_context2.prev = _context2.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
-                    _capacitor_core__WEBP = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"], SplashScreen = _capacitor_core__WEBP.SplashScreen, StatusBar = _capacitor_core__WEBP.StatusBar; //if (this.platform.is('hybrid')) {
+                    StatusBar = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"].StatusBar;
+                    this.platform.ready().then(function () {
+                      return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](_this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                          while (1) {
+                            switch (_context2.prev = _context2.next) {
+                              case 0:
+                                if (!this.platform.is("capacitor")) {
+                                  _context2.next = 3;
+                                  break;
+                                }
 
-                    _context2.next = 3;
-                    return SplashScreen.hide();
+                                _context2.next = 3;
+                                return StatusBar.setStyle({
+                                  style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light
+                                });
 
-                  case 3:
-                    if (!this.platform.is("capacitor")) {
-                      _context2.next = 6;
-                      break;
-                    }
+                              case 3:
+                                this.router.navigateByUrl('/app/tabs/schedule');
 
-                    _context2.next = 6;
-                    return StatusBar.setStyle({
-                      style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light
+                              case 4:
+                              case "end":
+                                return _context2.stop();
+                            }
+                          }
+                        }, _callee2, this);
+                      }));
                     });
 
-                  case 6:
-                    //}
-                    //this.openTutorial();
-                    this.router.navigateByUrl('/app/tabs/schedule');
-
-                  case 7:
+                  case 2:
                   case "end":
-                    return _context2.stop();
+                    return _context3.stop();
                 }
               }
-            }, _callee2, this);
+            }, _callee3, this);
           }));
         }
       }, {
         key: "checkLoginStatus",
         value: function checkLoginStatus() {
-          var _this = this;
+          var _this2 = this;
 
           return this.userData.isLoggedIn().then(function (loggedIn) {
-            return _this.updateLoggedInStatus(loggedIn);
+            return _this2.updateLoggedInStatus(loggedIn);
           });
         }
       }, {
         key: "updateLoggedInStatus",
         value: function updateLoggedInStatus(loggedIn) {
-          var _this2 = this;
+          var _this3 = this;
 
           setTimeout(function () {
-            _this2.loggedIn = loggedIn;
+            _this3.loggedIn = loggedIn;
           }, 300);
         }
       }, {
         key: "listenForLoginEvents",
         value: function listenForLoginEvents() {
-          var _this3 = this;
+          var _this4 = this;
 
           window.addEventListener('user:login', function () {
-            _this3.updateLoggedInStatus(true);
+            _this4.updateLoggedInStatus(true);
           });
           window.addEventListener('user:signup', function () {
-            _this3.updateLoggedInStatus(true);
+            _this4.updateLoggedInStatus(true);
           });
           window.addEventListener('user:logout', function () {
-            _this3.updateLoggedInStatus(false);
+            _this4.updateLoggedInStatus(false);
           });
         }
       }, {
         key: "logout",
         value: function logout() {
-          var _this4 = this;
+          var _this5 = this;
 
           this.userData.logout().then(function () {
-            return _this4.router.navigateByUrl('/app/tabs/schedule');
+            return _this5.router.navigateByUrl('/app/tabs/schedule');
           });
         }
       }, {
@@ -1344,11 +1353,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(CheckTutorial, [{
         key: "canLoad",
         value: function canLoad() {
-          var _this5 = this;
+          var _this6 = this;
 
           return this.storage.get('ion_did_tutorial').then(function (res) {
             if (res) {
-              _this5.router.navigate(['/app', 'tabs', 'schedule']);
+              _this6.router.navigate(['/app', 'tabs', 'schedule']);
 
               return false;
             } else {
@@ -1445,10 +1454,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "login",
         value: function login(username) {
-          var _this6 = this;
+          var _this7 = this;
 
           return this.storage.set(this.HAS_LOGGED_IN, true).then(function () {
-            _this6.setUsername(username);
+            _this7.setUsername(username);
 
             return window.dispatchEvent(new CustomEvent('user:login'));
           });
@@ -1456,10 +1465,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "signup",
         value: function signup(username) {
-          var _this7 = this;
+          var _this8 = this;
 
           return this.storage.set(this.HAS_LOGGED_IN, true).then(function () {
-            _this7.setUsername(username);
+            _this8.setUsername(username);
 
             return window.dispatchEvent(new CustomEvent('user:signup'));
           });
@@ -1467,10 +1476,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }, {
         key: "logout",
         value: function logout() {
-          var _this8 = this;
+          var _this9 = this;
 
           return this.storage.remove(this.HAS_LOGGED_IN).then(function () {
-            return _this8.storage.remove('username');
+            return _this9.storage.remove('username');
           }).then(function () {
             window.dispatchEvent(new CustomEvent('user:logout'));
           });
