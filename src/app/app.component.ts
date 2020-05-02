@@ -56,8 +56,8 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.checkLoginStatus();
-    this.listenForLoginEvents();
+    //this.checkLoginStatus();
+    //this.listenForLoginEvents();
 
     // this.swUpdate.available.subscribe(async res => {
     //   const toast = await this.toastCtrl.create({
@@ -94,9 +94,12 @@ export class AppComponent implements OnInit {
     const { SplashScreen, StatusBar } = Plugins;
     //if (this.platform.is('hybrid')) {
       await SplashScreen.hide();
-      await StatusBar.setStyle({ style: StatusBarStyle.Light });
+      if (this.platform.is("capacitor")){
+        await StatusBar.setStyle({ style: StatusBarStyle.Light });
+      }
     //}
-    this.openTutorial();
+    //this.openTutorial();
+    this.router.navigateByUrl('/app/tabs/schedule');
   }
 
   checkLoginStatus() {

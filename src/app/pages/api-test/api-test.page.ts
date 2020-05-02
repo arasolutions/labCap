@@ -27,6 +27,10 @@ export class ApiTestPage {
     await this.loading.present();
   }
 
+  /**
+   * Appel d'un observable (attente d'un flux)
+   * Ne pas oulbier de le unsuscribe en quittant la page
+   */
   getExampleData() {
     this.createLoading();
     this.httpSus$ = this.httpData.getDataExample().subscribe(
@@ -41,6 +45,9 @@ export class ApiTestPage {
     );
   }
 
+  /**
+   * Appel d'un observable qui ne renvoit qu'une donnée => on peut le convertir en Promise et utiliser await
+   */
   async getExampleDataToProm() {
     this.createLoading();
     try {
@@ -55,6 +62,9 @@ export class ApiTestPage {
     }
   }
 
+  /**
+   * Utilisation d'un bouchon, aucune gestion d'erreur
+   */
   getBouchonData(){
     this.createLoading();
     setTimeout(async() => {
@@ -64,9 +74,14 @@ export class ApiTestPage {
     
   }
 
+  /**
+   * Détruire les suscribes en cours avant de quitter
+   */
   ngOnDestroy() {
-    console.log('OnDestroy');
-    this.httpSus$.unsubscribe();
+    if (this.httpSus$){
+      console.log('unsubscribe : OK');
+      this.httpSus$.unsubscribe();
+    } 
   }
 
 }

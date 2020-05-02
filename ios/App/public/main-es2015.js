@@ -436,7 +436,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-app [class.dark-theme]=\"dark\">\n  <ion-split-pane contentId=\"main-content\">\n\n    <ion-menu contentId=\"main-content\">\n      <ion-content>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Plugins\n          </ion-list-header>\n    \n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/cam\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"camera\"></ion-icon>\n              <ion-label>\n                Camera\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n    \n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Misc\n          </ion-list-header>\n    \n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/api-test\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"repeat\"></ion-icon>\n              <ion-label>\n                Api Test\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Conference\n          </ion-list-header>\n          <ion-menu-toggle autoHide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n            <ion-item [routerLink]=\"p.url\" routerLinkActive=\"selected\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" [name]=\"p.icon + '-outline'\"></ion-icon>\n              <ion-label>\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list *ngIf=\"loggedIn\" lines=\"none\">\n          <ion-list-header>\n            Account\n          </ion-list-header>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/account\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"person\"></ion-icon>\n              <ion-label>\n                Account\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/support\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"help\"></ion-icon>\n              <ion-label>\n                Support\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item button (click)=\"logout()\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"log-out\"></ion-icon>\n              <ion-label>\n                Logout\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n        </ion-list>\n\n        <ion-list *ngIf=\"!loggedIn\" lines=\"none\">\n          <ion-list-header>\n            Account\n          </ion-list-header>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/login\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"log-in\"></ion-icon>\n              <ion-label>\n                Login\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/support\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"help\"></ion-icon>\n              <ion-label>\n                Support\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/signup\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"person-add\"></ion-icon>\n              <ion-label>\n                Signup\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-item>\n            <ion-icon slot=\"start\" name=\"moon-outline\"></ion-icon>\n            <ion-label>\n              Dark Mode\n            </ion-label>\n            <ion-toggle [(ngModel)]=\"dark\"></ion-toggle>\n          </ion-item>\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Tutorial\n          </ion-list-header>\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item button (click)=\"openTutorial()\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"hammer\"></ion-icon>\n              <ion-label>Show Tutorial</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n\n  </ion-split-pane>\n\n</ion-app>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-app [class.dark-theme]=\"dark\">\n  <ion-split-pane contentId=\"main-content\">\n\n    <ion-menu contentId=\"main-content\">\n      <ion-content>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Plugins\n          </ion-list-header>\n    \n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/cam\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"camera\"></ion-icon>\n              <ion-label>\n                Camera\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n    \n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Misc\n          </ion-list-header>\n    \n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/api-test\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"repeat\"></ion-icon>\n              <ion-label>\n                Api Test\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Conference\n          </ion-list-header>\n          <ion-menu-toggle autoHide=\"false\" *ngFor=\"let p of appPages; let i = index\">\n            <ion-item [routerLink]=\"p.url\" routerLinkActive=\"selected\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" [name]=\"p.icon + '-outline'\"></ion-icon>\n              <ion-label>\n                {{p.title}}\n              </ion-label>\n            </ion-item>\n\n          </ion-menu-toggle>\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Account\n          </ion-list-header>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/account\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"person\"></ion-icon>\n              <ion-label>\n                Account\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/support\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"help\"></ion-icon>\n              <ion-label>\n                Support\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item button (click)=\"logout()\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"log-out\"></ion-icon>\n              <ion-label>\n                Logout\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Account\n          </ion-list-header>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/login\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"log-in\"></ion-icon>\n              <ion-label>\n                Login\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/support\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"help\"></ion-icon>\n              <ion-label>\n                Support\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item routerLink=\"/signup\" routerLinkActive=\"active\" routerDirection=\"root\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"person-add\"></ion-icon>\n              <ion-label>\n                Signup\n              </ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n\n          <ion-item>\n            <ion-icon slot=\"start\" name=\"moon-outline\"></ion-icon>\n            <ion-label>\n              Dark Mode\n            </ion-label>\n            <ion-toggle [(ngModel)]=\"dark\"></ion-toggle>\n          </ion-item>\n        </ion-list>\n\n        <ion-list lines=\"none\">\n          <ion-list-header>\n            Tutorial\n          </ion-list-header>\n          <ion-menu-toggle autoHide=\"false\">\n            <ion-item button (click)=\"openTutorial()\" detail=\"false\">\n              <ion-icon slot=\"start\" name=\"hammer\"></ion-icon>\n              <ion-label>Show Tutorial</ion-label>\n            </ion-item>\n          </ion-menu-toggle>\n        </ion-list>\n      </ion-content>\n    </ion-menu>\n\n    <ion-router-outlet id=\"main-content\"></ion-router-outlet>\n\n  </ion-split-pane>\n\n</ion-app>\n");
 
 /***/ }),
 
@@ -835,8 +835,8 @@ let AppComponent = class AppComponent {
     }
     ngOnInit() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
-            // this.checkLoginStatus();
-            // this.listenForLoginEvents();
+            //this.checkLoginStatus();
+            //this.listenForLoginEvents();
             // this.swUpdate.available.subscribe(async res => {
             //   const toast = await this.toastCtrl.create({
             //     message: 'Update available!',
@@ -870,9 +870,12 @@ let AppComponent = class AppComponent {
             const { SplashScreen, StatusBar } = _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["Plugins"];
             //if (this.platform.is('hybrid')) {
             yield SplashScreen.hide();
-            yield StatusBar.setStyle({ style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light });
+            if (this.platform.is("capacitor")) {
+                yield StatusBar.setStyle({ style: _capacitor_core__WEBPACK_IMPORTED_MODULE_5__["StatusBarStyle"].Light });
+            }
             //}
-            this.openTutorial();
+            //this.openTutorial();
+            this.router.navigateByUrl('/app/tabs/schedule');
         });
     }
     checkLoginStatus() {
@@ -951,15 +954,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic-native/in-app-browser/ngx */ "./node_modules/@ionic-native/in-app-browser/ngx/index.js");
-/* harmony import */ var _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic-native/status-bar/ngx */ "./node_modules/@ionic-native/status-bar/ngx/index.js");
-/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
-/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/fesm2015/ionic-angular.js");
+/* harmony import */ var _ionic_storage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ionic/storage */ "./node_modules/@ionic/storage/fesm2015/ionic-storage.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/service-worker */ "./node_modules/@angular/service-worker/fesm2015/service-worker.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 
 
 
@@ -978,18 +979,18 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_3__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_12__["FormsModule"],
-            _ionic_angular__WEBPACK_IMPORTED_MODULE_6__["IonicModule"].forRoot(),
-            _ionic_storage__WEBPACK_IMPORTED_MODULE_7__["IonicStorageModule"].forRoot(),
-            _angular_service_worker__WEBPACK_IMPORTED_MODULE_10__["ServiceWorkerModule"].register('ngsw-worker.js', {
-                enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_11__["environment"].production
+            _angular_forms__WEBPACK_IMPORTED_MODULE_11__["FormsModule"],
+            _ionic_angular__WEBPACK_IMPORTED_MODULE_5__["IonicModule"].forRoot(),
+            _ionic_storage__WEBPACK_IMPORTED_MODULE_6__["IonicStorageModule"].forRoot(),
+            _angular_service_worker__WEBPACK_IMPORTED_MODULE_9__["ServiceWorkerModule"].register('ngsw-worker.js', {
+                enabled: _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].production
             })
         ],
-        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]],
-        providers: [_ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__["InAppBrowser"], _ionic_native_status_bar_ngx__WEBPACK_IMPORTED_MODULE_5__["StatusBar"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
+        providers: [_ionic_native_in_app_browser_ngx__WEBPACK_IMPORTED_MODULE_4__["InAppBrowser"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
     })
 ], AppModule);
 

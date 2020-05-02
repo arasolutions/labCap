@@ -261,6 +261,11 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, _callee, this);
           }));
         }
+        /**
+         * Appel d'un observable (attente d'un flux)
+         * Ne pas oulbier de le unsuscribe en quittant la page
+         */
+
       }, {
         key: "getExampleData",
         value: function getExampleData() {
@@ -290,6 +295,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }));
           });
         }
+        /**
+         * Appel d'un observable qui ne renvoit qu'une donnée => on peut le convertir en Promise et utiliser await
+         */
+
       }, {
         key: "getExampleDataToProm",
         value: function getExampleDataToProm() {
@@ -332,6 +341,10 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, _callee3, this, [[1, 9, 12, 17]]);
           }));
         }
+        /**
+         * Utilisation d'un bouchon, aucune gestion d'erreur
+         */
+
       }, {
         key: "getBouchonData",
         value: function getBouchonData() {
@@ -363,11 +376,17 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }));
           }, 1000);
         }
+        /**
+         * Détruire les suscribes en cours avant de quitter
+         */
+
       }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
-          console.log('OnDestroy');
-          this.httpSus$.unsubscribe();
+          if (this.httpSus$) {
+            console.log('unsubscribe : OK');
+            this.httpSus$.unsubscribe();
+          }
         }
       }]);
 

@@ -139,6 +139,10 @@ let ApiTestPage = class ApiTestPage {
             yield this.loading.present();
         });
     }
+    /**
+     * Appel d'un observable (attente d'un flux)
+     * Ne pas oulbier de le unsuscribe en quittant la page
+     */
     getExampleData() {
         this.createLoading();
         this.httpSus$ = this.httpData.getDataExample().subscribe(res => {
@@ -148,6 +152,9 @@ let ApiTestPage = class ApiTestPage {
             yield this.loading.dismiss();
         }));
     }
+    /**
+     * Appel d'un observable qui ne renvoit qu'une donnée => on peut le convertir en Promise et utiliser await
+     */
     getExampleDataToProm() {
         return tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
             this.createLoading();
@@ -163,6 +170,9 @@ let ApiTestPage = class ApiTestPage {
             }
         });
     }
+    /**
+     * Utilisation d'un bouchon, aucune gestion d'erreur
+     */
     getBouchonData() {
         this.createLoading();
         setTimeout(() => tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"](this, void 0, void 0, function* () {
@@ -170,9 +180,14 @@ let ApiTestPage = class ApiTestPage {
             yield this.loading.dismiss();
         }), 1000);
     }
+    /**
+     * Détruire les suscribes en cours avant de quitter
+     */
     ngOnDestroy() {
-        console.log('OnDestroy');
-        this.httpSus$.unsubscribe();
+        if (this.httpSus$) {
+            console.log('unsubscribe : OK');
+            this.httpSus$.unsubscribe();
+        }
     }
 };
 ApiTestPage.ctorParameters = () => [
