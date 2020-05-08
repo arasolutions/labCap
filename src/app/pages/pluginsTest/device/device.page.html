@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Device Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-text-center">
+  <ion-list>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Device Info</ion-label>
+      </ion-item-divider>
+      <ion-item *ngFor="let data of deviceData | keyvalue">
+        <ion-label>{{data.key}}</ion-label>
+        <ion-note slot="end">{{data.value}}</ion-note>
+      </ion-item>
+    </ion-item-group>
+    <ion-item-group>
+      <ion-item-divider>
+        <ion-label>Lang Info</ion-label>
+      </ion-item-divider>
+      <ion-item *ngFor="let data of langData | keyvalue">
+        <ion-label>{{data.key}}</ion-label>
+        <ion-note slot="end">{{data.value}}</ion-note>
+      </ion-item>
+    </ion-item-group>
+
+  </ion-list>
+</ion-content>

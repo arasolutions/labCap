@@ -40,6 +40,10 @@ const routes: Routes = [
   {
     path: 'cam',
     loadChildren: () => import('./pages/pluginsTest/cam/cam.module').then( m => m.CamPageModule)
+  },
+  {
+    path: 'device',
+    loadChildren: () => import('./pages/pluginsTest/device/device.module').then( m => m.DevicePageModule)
   }
 ];
 
